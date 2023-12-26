@@ -10,6 +10,9 @@ namespace ConceptosEFC.Utilidades
         {
             //"Mappeo" desde GeneroCreacionDTO hasta Genero
             CreateMap<GeneroCreacionDTO, Genero>();
+
+            //"Mappeo" desde ActorCreacionDTO hasta Actor
+            CreateMap<ActorCreacionDTO, Actor>();
         }
     }
 }
