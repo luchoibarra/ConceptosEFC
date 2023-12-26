@@ -25,18 +25,8 @@ namespace ConceptosEFC.Controllers
             //Mando a "AutoMapper" a laburar con el mappeo
             var genero = mapper.Map<Genero>(generoCreacion);
 
-            context.Add(genero);
-            await context.SaveChangesAsync(); //Usamos esto para pujar a la base de datos
-            return Ok();
-        }
-
-        //"mappeo" un arreglo de "GeneroCreacionDTO" a un arreglo de "Generos"
-        [HttpPost("varios")]
-        public async Task<ActionResult> Post(GeneroCreacionDTO[] generosCreacionDTO)
-        {
-            var generos = mapper.Map<Genero[]>(generosCreacionDTO);
-            context.AddRange(generos);
-            await context.SaveChangesAsync(); //Usamos esto para pujar a la base de datos
+            context.Add(generoCreacion);
+            await context.SaveChangesAsync();
             return Ok();
         }
     }
